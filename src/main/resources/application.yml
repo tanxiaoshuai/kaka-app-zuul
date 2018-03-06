@@ -1,0 +1,14 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: kaka-app-zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+zuul:
+  routes:
+    api-1:
+      path: /servers/**
+      url: http://localhost:8018/
